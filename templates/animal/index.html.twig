@@ -15,10 +15,20 @@
 				<img src="{{ asset('images/' ~ animal.image) }}">
 			</div>
 			<div class="col-auto py-2">
-				<h2>{{ animal.nom }}</h2>
-				<div>{{ animal.description }}</div>
+				<h2>Nom :
+					{{ animal.nom }}</h2>
+				<div>Poids :
+					{{ animal.poids }}</div>
+				<div>Description :
+					{{ animal.description }}</div>
+				<div>Dangereux :
+					{% if(animal.dangereux) %}
+						Oui
+					{% else %}
+						Non
+					{% endif %}
+				</div>
 			</div>
 		{% endfor %}
 
-	</table>
-{% endblock %}
+	{% endblock %}
