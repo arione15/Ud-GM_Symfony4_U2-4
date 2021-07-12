@@ -16,18 +16,12 @@
 			</div>
 			<div class="col-auto py-2">
 				<h2>Nom :
-					<a href="{{ path('afficher_Animal') }}">{{ animal.nom }}</a></h2>
+					<a href="{{ path('afficher_Animal', {'id':animal.id}) }}">{{ animal.nom }}</a></h2>
 				<div>Poids :
 					{{ animal.poids }}</div>
 				<div>Description :
 					{{ animal.description }}</div>
-				<div>Dangereux :
-					{% if(animal.dangereux) %}
-						Oui
-					{% else %}
-						Non
-					{% endif %}
-				</div>
+				
 			</div>
 		{% endfor %}
 

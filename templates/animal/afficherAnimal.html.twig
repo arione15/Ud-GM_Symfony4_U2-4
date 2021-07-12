@@ -3,7 +3,18 @@
 {% block title %}Affichage d'un animal
 {% endblock %}
 
-{% block monTitre %}Détails de l'animal
+{% block monTitre %}Détails de l'animal : {{animal.nom}}
 {% endblock %}
 
-{% block body %}{% endblock %}
+{% block body %}
+	<h3>Poids :
+		{{animal.poids}}</h3>
+	<div>Dangereux :
+		{% if(animal.dangereux) %}
+			Oui
+		{% else %}
+			Non
+		{% endif %}
+	</div>
+
+{% endblock %}
