@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Page d'accueil
+{% endblock %}
+{% block monTitre %}Liste des animaux
+{% endblock %}
+
+{% block body %}
+<table class="table">
+<tr class="thead">
+<th>Image</th>
+<th>Nom</th>
+<th>Déscription</th>
+</tr>
+{% for animal in animaux %}
+
+<tr>
+<td><img src="{{ asset('images/' ~ animal.nom ~ '.png') }}"></td>
+<td>{{ animal.nom }}</td>
+<td>{{ animal.description }}</td>
+</tr>
+{% endfor %}
+
+</table>
+{% endblock %}
