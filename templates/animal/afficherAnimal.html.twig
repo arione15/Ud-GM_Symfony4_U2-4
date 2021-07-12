@@ -3,18 +3,30 @@
 {% block title %}Affichage d'un animal
 {% endblock %}
 
-{% block monTitre %}Détails de l'animal : {{animal.nom}}
+{% block monTitre %}Détails de l'animal :
+	{{animal.nom}}
 {% endblock %}
 
 {% block body %}
-	<h3>Poids :
-		{{animal.poids}}</h3>
-	<div>Dangereux :
-		{% if(animal.dangereux) %}
-			Oui
-		{% else %}
-			Non
-		{% endif %}
+	<div class="row align-items-center">
+		<div class="col-2 text-center">
+			<img src="{{ asset('images/' ~ animal.image) }}">
+		</div>
+		<div class="col-auto">
+			<div>
+				Description :
+				{{ animal.description }}</div>
+			<div>Poids :
+				{{ animal.poids }}</div>
+			<div>Dangereux :
+				{% if(animal.dangereux) %}
+					<span class="text-danger">Oui</span>
+                    <span class="badge bg-warning">OUI</span>
+				{% else %}
+					<span class="text-success">Non</span>
+                    <span class="badge bg-success">NON</span>
+				{% endif %}
+			</div>
+		</div>
 	</div>
-
 {% endblock %}

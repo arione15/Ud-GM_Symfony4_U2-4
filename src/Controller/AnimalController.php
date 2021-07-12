@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Animal;
 use App\Repository\AnimalRepository;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -23,9 +24,8 @@ class AnimalController extends AbstractController
     /**
      * @Route("/animal/{id}", name="afficher_Animal")
      */
-    public function afficherAnimal(AnimalRepository $repository, $id)
+    public function afficherAnimal(Animal $animal)
     {
-        $animal = $repository -> find($id);
         return $this->render('animal/afficherAnimal.html.twig', [
             "animal" => $animal
         ]);
