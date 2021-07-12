@@ -2,24 +2,23 @@
 
 {% block title %}Page d'accueil
 {% endblock %}
+
 {% block monTitre %}Liste des animaux
 {% endblock %}
 
 {% block body %}
-<table class="table">
-<tr class="thead">
-<th>Image</th>
-<th>Nom</th>
-<th>Déscription</th>
-</tr>
-{% for animal in animaux %}
 
-<tr>
-<td><img src="{{ asset('images/' ~ animal.nom ~ '.png') }}"></td>
-<td>{{ animal.nom }}</td>
-<td>{{ animal.description }}</td>
-</tr>
-{% endfor %}
+	{% for animal in animaux %}
 
-</table>
+		<div class="row align-item-center">
+			<div class="col-2 text-center py-2">
+				<img src="{{ asset('images/' ~ animal.image) }}">
+			</div>
+			<div class="col-auto py-2">
+				<h2>{{ animal.nom }}</h2>
+				<div>{{ animal.description }}</div>
+			</div>
+		{% endfor %}
+
+	</table>
 {% endblock %}
