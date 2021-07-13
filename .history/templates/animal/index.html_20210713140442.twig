@@ -22,14 +22,12 @@
 					{{ animal.poids }}</div>
 				<div>Description :
 					{{ animal.description }}</div>
-				<div>Famille :
-					<a href="{{ path('afficher_famille', {'id':animal.famille.id}) }}" class="btn btn-primary">{{ animal.famille.libelle }}</a>
-				</div>
-				Continent :
+				<div>Famille : <a href="{{ path('afficher_famille', {'id':animal.famille.id}) }}" class="btn btn-primary">{{ animal.famille.libelle }}</a></div>
+				Continent : 
 				{% for continent in animal.continents %}
-					<a href="" class="btn btn-warning">{{ continent.libelle }}</a>
-				{% endfor %}
-			</div>
-		{% endfor %}
+				<a href="" class="btn btn-warning">{{ continent.libelle }}</a>
+{% endfor %}
+				</div>
+			{% endfor %}
 
-	{% endblock %}
+		{% endblock %}
