@@ -80,7 +80,8 @@ class AnimalFixtures extends Fixture
             ->setFamille($f2)
             ->addContinent($c3)
             ->addContinent($c4)
-            ->addContinent($c5);
+            ->addContinent($c5)
+            ;
         $manager->persist($a3);
 
         $a4 = new Animal();
@@ -91,7 +92,8 @@ class AnimalFixtures extends Fixture
             ->setDangereux(true)
             ->setFamille($f2)
             ->addContinent($c4)
-            ->addContinent($c5);
+            ->addContinent($c5)
+            ;
         $manager->persist($a4);
 
         $a5 = new Animal();
@@ -101,7 +103,8 @@ class AnimalFixtures extends Fixture
             ->setPoids(350)
             ->setDangereux(true)
             ->setFamille($f3)
-            ->addContinent($c4);
+            ->addContinent($c4)
+            ;
         $manager->persist($a5);
 
         $manager->flush();

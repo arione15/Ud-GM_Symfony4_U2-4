@@ -80,7 +80,8 @@ class AnimalFixtures extends Fixture
             ->setFamille($f2)
             ->addContinent($c3)
             ->addContinent($c4)
-            ->addContinent($c5);
+            ->addContinent($c5)
+            ;
         $manager->persist($a3);
 
         $a4 = new Animal();

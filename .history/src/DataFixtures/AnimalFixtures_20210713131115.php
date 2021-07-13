@@ -28,21 +28,20 @@ class AnimalFixtures extends Fixture
         $c4 -> setLibelle("Océanie");
         $manager -> persist($c4);
         
-        $c5 = new Continent();
-        $c5 -> setLibelle("Amérique");
+        $c1 = new Continent();
+        $c1 -> setLibelle("Amérique");
         $manager -> persist($c5);
         
+
 
         $f1 = new Famille();
         $f1 ->setLibelle("mammifères")
             ->setDescription("Animaux vertébrés nourrissant leurs petits avec du lait");
         $manager->persist($f1);
-        
         $f2 = new Famille();
         $f2 ->setLibelle("reptiles")
             ->setDescription("Animaux vertébrés qui rampent");
         $manager->persist($f2);
-        
         $f3 = new Famille();
         $f3 ->setLibelle("poissons")
             ->setDescription("Animaux invertébrés du monde aquatique");
@@ -63,12 +62,7 @@ class AnimalFixtures extends Fixture
             ->setImage("Cochon.png")
             ->setPoids(100)
             ->setDangereux(false)
-            ->setFamille($f1)
-            ->addContinent($c1)
-            ->addContinent($c2)
-            ->addContinent($c3)
-            ->addContinent($c4)
-            ->addContinent($c5);
+            ->setFamille($f1);
         $manager->persist($a2);
 
         $a3 = new Animal();
@@ -77,10 +71,7 @@ class AnimalFixtures extends Fixture
             ->setImage("Serpent.png")
             ->setPoids(5)
             ->setDangereux(true)
-            ->setFamille($f2)
-            ->addContinent($c3)
-            ->addContinent($c4)
-            ->addContinent($c5);
+            ->setFamille($f2);
         $manager->persist($a3);
 
         $a4 = new Animal();
@@ -89,9 +80,7 @@ class AnimalFixtures extends Fixture
             ->setImage("Croco.png")
             ->setPoids(250)
             ->setDangereux(true)
-            ->setFamille($f2)
-            ->addContinent($c4)
-            ->addContinent($c5);
+            ->setFamille($f2);
         $manager->persist($a4);
 
         $a5 = new Animal();
@@ -100,8 +89,7 @@ class AnimalFixtures extends Fixture
             ->setImage("Requin.png")
             ->setPoids(350)
             ->setDangereux(true)
-            ->setFamille($f3)
-            ->addContinent($c4);
+            ->setFamille($f3);
         $manager->persist($a5);
 
         $manager->flush();
