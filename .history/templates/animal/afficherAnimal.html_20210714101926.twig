@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Affichage d'un animal
+{% endblock %}
+
+{% block monTitre %}Détails de l'animal :
+	{{animal.nom}}
+{% endblock %}
+
+{% block body %}
+	<div class="row align-items-center">
+		<div class="col-2 text-center">
+			<img src="{{ asset('images/' ~ animal.image) }}">
+		</div>
+		<div class="col-auto">
+			<div>
+				Description :
+				{{ animal.description }}</div>
+			<div>Poids :
+				{{ animal.poids }}</div>
+			<div>Dangereux :
+				{% if(animal.dangereux) %}
+					{# <span class="text-danger">Oui</span> #}
+					<span class="badge bg-warning">OUI</span>
+				{% else %}
+					{# <span class="text-success">Non</span> #}
+					<span class="badge bg-success">NON</span>
+				{% endif %}
+			</div>
+			<div>Famille :
+				<a href="{{ path('afficher_famille', {'id':animal.famille.id}) }}" class="btn btn-primary">{{ animal.famille.libelle }}</a>
+			</div>
+			<div>
+				Continent :
+				{% for continent in animal.continents %}
+					<a href="{{ path('afficher_continent', {'id':continent.id}) }}" class="btn btn-warning">{{ continent.libelle }}</a>
+				{% endfor %}
+			</div>
+
+
+			{% for dispose in animal.disposes %}
+				<h2 class="border-bottom border-primary"><a href="{{path('afficher_personne',{'id':personne.id})}}">{{ personne.nom | capitalize }}</a></h2>
+				<div class="row align-items-center">
+					<div class="col text-center">
+						<h2>a href="{{path('afficher_personne',{'id' : dispose.personne.nom})}}">{{ dispose.personne.nom }}</a>
+						</h2>
+					</div>
+				</div>
+			</div>
+		{% endfor %}
+	</div>
+</div>{% endblock %}
